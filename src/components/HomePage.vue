@@ -82,7 +82,12 @@ export default {
     <HeadNav></HeadNav>
     <div class="bgImg"></div>
     <div class="topBg">
-      <img class="topBgImg" src="../assets/images/topBgImg.png" alt="" />
+      <div class="topSlgon">一句slgon，一句slgon，一句slgon</div>
+      <img
+        class="topBgImg"
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2F98%2Faf%2F7b%2F98af7bd0617a4dffe195e41010f40891.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1660394506&t=cfecb3b07ffdf4c43477630c748cb63a"
+        alt=""
+      />
     </div>
     <CategoryBar
       v-for="(val, index) in categoryList"
@@ -103,6 +108,20 @@ export default {
     height: 300px;
     background-color: rgba(#000, 1);
     margin-bottom: 20px;
+    object-fit: cover;
+    position: relative;
+    .topSlgon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-weight: bold;
+      left: 80px;
+      font-size: 30px;
+      opacity: 1;
+      color: #fff;
+      z-index: 2;
+    }
+
     .topBgImg {
       width: 100%;
       height: 100%;
