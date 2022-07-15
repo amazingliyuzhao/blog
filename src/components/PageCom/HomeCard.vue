@@ -1,6 +1,7 @@
 <script lang="ts">
 import { ref, Ref, PropType } from 'vue';
 import { CategoryProps } from '../../types/home.type';
+import router from '../../router/index';
 
 export default {
   props: {
@@ -10,13 +11,20 @@ export default {
     },
   },
   setup() {
-    return {};
+    const testPreText = ref('#ddsads');
+    return { testPreText };
+  },
+  methods: {
+    goArticlePage() {
+      console.log(123);
+      router.push('article');
+    },
   },
 };
 </script>
 
 <template>
-  <div class="cardWrap">
+  <div class="cardWrap" @click="goArticlePage">
     <div class="cardImg">
       <img
         src="https://img1.baidu.com/it/u=1950584475,1461582710&fm=253&fmt=auto&app=120&f=JPEG?w=960&h=800"

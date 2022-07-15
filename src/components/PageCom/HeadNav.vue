@@ -1,11 +1,13 @@
 <script lang="ts">
-import { ref, Ref } from 'vue';
+import { ref, Ref, onMounted } from 'vue';
 export default {
   setup() {
     const selectNavIndex: Ref<number> = ref(0);
+    const showNavBg = ref(false);
     const changeSelectIndex = (index: number) => {
       selectNavIndex.value = index;
     };
+
     const navList: Ref<{ name: string; url: string }[]> = ref([
       {
         name: '首页',
@@ -25,8 +27,21 @@ export default {
       },
     ]);
 
+    const watchScroll = () => {
+      console.log(123);
+      console.log(window);
+      window.onscroll = () => {
+        const scrollTop =
+          document.documentElement.scrollTop || document.body.scrollTop;
+        console.log(scrollTop);
+        showNavBg.value = scrollTop > 100;
+      };
+    };
+    onMounted(watchScroll);
+
     return {
       navList,
+      showNavBg,
       selectNavIndex,
       changeSelectIndex,
     };
@@ -35,7 +50,7 @@ export default {
 </script>
 
 <template>
-  <div class="navWrap">
+  <div class="navWrap" :class="{ showNavBg }">
     <!-- <img class="logo" src="../../assets/images/logo.png" alt="" /> -->
 
     <div class="leftList">
@@ -58,13 +73,17 @@ export default {
   height: 50px;
   // box-shadow: 13px -29px 39px 7px #000;
   display: flex;
+  width: 100%;
   align-items: center;
   padding: 0 80px;
   background-color: transparent;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 10;
   left: 0;
+  &.showNavBg {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
   .logo {
     width: 200px;
     opacity: 0.2;

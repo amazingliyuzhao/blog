@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <div class="homePageWrap" @click="goHome">
+  <div class="coverPageWrap" @click="goHome">
     <div class="coverPage">
       <!-- <img
         src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F2020-08-28%2F5f48c87981f5d.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1660284091&t=18c04d788566d69f86739f79c176087d"
@@ -40,6 +40,9 @@ export default {
 </template>
 
 <style scoped lang="scss">
+body {
+  background-color: #000;
+}
 @keyframes identifier {
   0% {
     transform: translateY(200px);
@@ -59,7 +62,7 @@ export default {
     opacity: 0.7;
   }
 }
-.homePageWrap {
+.coverPageWrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,9 +73,12 @@ export default {
     position: absolute;
     top: 0;
     width: 100%;
-    overflow: hidden;
-    opacity: 0.4;
+
+    background-color: #000;
+    // opacity: 0.4;
+    // overflow: hidden;
     img {
+      opacity: 0.5;
       width: 100%;
       height: 100%;
       object-fit: cover;

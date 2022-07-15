@@ -1,10 +1,9 @@
 <script lang="ts">
-import HeadNav from './PageCom/HeadNav.vue';
-import CategoryBar from './PageCom/CategoryBar.vue';
+import CategoryBar from '../components/PageCom/CategoryBar.vue';
 import { ref, Ref } from 'vue';
 import { CategoryProps } from '../types/home.type';
 export default {
-  components: { HeadNav, CategoryBar },
+  components: { CategoryBar },
   setup() {
     const testIntroduction =
       '描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述';
@@ -70,8 +69,11 @@ export default {
         ],
       },
     ]);
+    const testPreText = ref('# ddsads');
+
     return {
       categoryList,
+      testPreText,
     };
   },
 };
@@ -79,7 +81,6 @@ export default {
 
 <template>
   <div class="homePageWrap">
-    <HeadNav></HeadNav>
     <div class="bgImg"></div>
     <div class="topBg">
       <div class="topSlgon">一句slgon，一句slgon，一句slgon</div>
@@ -94,6 +95,9 @@ export default {
       :key="index"
       :category-data="val"
     ></CategoryBar>
+    <!-- <div class="testpreview">
+      <v-md-preview :text="testPreText"></v-md-preview>
+    </div> -->
   </div>
 </template>
 
@@ -102,7 +106,6 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #fff;
-  overflow-y: scroll;
   .topBg {
     width: 100%;
     height: 300px;

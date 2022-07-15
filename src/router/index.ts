@@ -6,7 +6,8 @@
 
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import CoverPage from '../components/CoverPage.vue';
-import HomePage from '../components/HomePage.vue';
+import HomePage from '../Page/HomePage.vue';
+import Article from '../Page/Article.vue';
 
 /**
  * 定义路由模块
@@ -16,13 +17,18 @@ import HomePage from '../components/HomePage.vue';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Login',
+    name: 'cover',
     component: CoverPage,
   },
   {
     path: '/home',
     name: 'home',
     component: HomePage,
+  },
+  {
+    path: '/article',
+    name: 'article',
+    component: Article,
   },
 ];
 
