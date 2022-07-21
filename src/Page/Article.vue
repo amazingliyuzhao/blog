@@ -1,13 +1,29 @@
 <script lang="ts">
 import { ref, Ref } from 'vue';
 import { CategoryProps } from '../types/home.type';
+import { json } from 'stream/consumers';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+// const mdT = require('../docs/test.md');
+// import HelloWorld from '../docs/test.md';
+
 export default {
   components: {},
   setup() {
-    const testPreText = ref('# ddsads');
+    // console.log(Docu);
+    const testPreText = ref(`
+    # das
+    \`\`\`json\`\`\`
+      dsda
+    \`\`\`
+    `);
 
     return {
       testPreText,
+    };
+  },
+  data() {
+    return {
+      text: '',
     };
   },
 };
@@ -19,7 +35,9 @@ export default {
       <div class="topSlgon">介绍，介绍，介绍，介绍，</div>
     </div>
     <div class="previewContainer">
-      <v-md-preview :text="testPreText"></v-md-preview>
+      <v-md-editor v-model="text" height="400px"></v-md-editor>
+
+      <!-- <v-md-preview :text="testPreText"></v-md-preview> -->
     </div>
   </div>
 </template>

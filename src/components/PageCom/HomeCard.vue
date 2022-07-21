@@ -1,12 +1,12 @@
 <script lang="ts">
-import { ref, Ref, PropType } from 'vue';
-import { CategoryProps } from '../../types/home.type';
+import { ref, Ref, PropType, defineComponent } from 'vue';
+import { CategoryProps, CardItem } from '../../types/home.type';
 import router from '../../router/index';
 
-export default {
+export default defineComponent({
   props: {
     cardData: {
-      type: Object as PropType<CategoryProps['categoryData']['cardList']>,
+      type: Object as PropType<CardItem>,
       required: true,
     },
   },
@@ -20,7 +20,7 @@ export default {
       router.push('article');
     },
   },
-};
+});
 </script>
 
 <template>

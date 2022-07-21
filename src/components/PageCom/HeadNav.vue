@@ -1,6 +1,6 @@
 <script lang="ts">
-import { ref, Ref, onMounted } from 'vue';
-export default {
+import { ref, Ref, onMounted, defineComponent } from 'vue';
+export default defineComponent({
   setup() {
     const selectNavIndex: Ref<number> = ref(0);
     const showNavBg = ref(false);
@@ -46,7 +46,7 @@ export default {
       changeSelectIndex,
     };
   },
-};
+});
 </script>
 
 <template>

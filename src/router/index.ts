@@ -8,7 +8,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import CoverPage from '../components/CoverPage.vue';
 import HomePage from '../Page/HomePage.vue';
 import Article from '../Page/Article.vue';
-
+import EditArticle from '../Page/EditArticle.vue';
 /**
  * 定义路由模块
  * 2022年2月28日21:41:54
@@ -29,6 +29,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/article',
     name: 'article',
     component: Article,
+  },
+  {
+    path: '/editArticle',
+    name: 'editArticle',
+    component: EditArticle,
   },
 ];
 

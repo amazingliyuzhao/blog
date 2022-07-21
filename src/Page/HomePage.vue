@@ -95,9 +95,6 @@ export default {
       :key="index"
       :category-data="val"
     ></CategoryBar>
-    <!-- <div class="testpreview">
-      <v-md-preview :text="testPreText"></v-md-preview>
-    </div> -->
   </div>
 </template>
 

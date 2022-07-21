@@ -1,9 +1,9 @@
 <script lang="ts">
 import { ref, Ref, defineComponent, PropType } from 'vue';
 import HomeCard from './HomeCard.vue';
-import { CategoryProps } from '../../types/home.type';
+import { CategoryProps, CardItem } from '../../types/home.type';
 
-export default {
+export default defineComponent({
   components: { HomeCard },
   props: {
     categoryData: {
@@ -16,7 +16,7 @@ export default {
     console.log(props.categoryData);
     return {};
   },
-};
+});
 </script>
 
 <template>
